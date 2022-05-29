@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 wget --quiet -O - https://deb.beekeeperstudio.io/beekeeper.key | gpg --dearmor | sudo tee /usr/share/keyrings/beekeeper.gpg
 

@@ -1,6 +1,5 @@
-#!/bin/sh
-sudo apt install curl -y
+#!/usr/bin/env bash
 
 curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
 
-sudo apt-get install speedtest -y
+sudo apt install speedtest -y

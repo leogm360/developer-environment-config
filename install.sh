@@ -1,35 +1,32 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-mkdir ./src/temp
-
-cd ./src/scripts || exit 0
+cd .//src/scripts || echo 'ERROR IN CHANGING DIRECTORIES'
 
 sudo chmod +x *.sh
 
-sh install-first-start.sh
+start=$(date +%S)
 
-sh install-docker.sh
+./install-first-start.sh
+./install-git-gitflow.sh
+./install-node.sh
+./install-softwares.sh
+./install-docker.sh
+./install-postgres.sh
+./install-brave-browser.sh
+./install-beekeeper-studio.sh
+./install-heroku.sh
+./install-ookla-speedtest
+./install-inkscape.sh
+./install-sticky-notes.sh
+./install-oh-my-zsh.sh
+./install-power-level10k.sh
 
-sh install-node.sh
+cd ../configs || echo 'ERROR IN CHANGING DIRECTORIES'
 
-sh install-postgres.sh
+cp -r ./ "$HOME"
 
-sh install-softwares.sh
+cd "$HOME" || echo 'ERROR IN CHANGING DIRECTORIES'
 
-sh install-brave-browser.sh
+end=$(date +%S)
 
-sh install-beekeeper-studio.sh
-
-sh install-git-gitflow.sh
-
-sh install-heroku.sh
-
-sh install-ookla-speedtest
-
-sh install-terminal.sh
-
-sh install-inkscape.sh
-
-cd .. || exit 0
-
-sudo rm -rf /temp
+echo "✨ All done (took $((end - start))s)."

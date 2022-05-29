@@ -6,12 +6,10 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 
 sudo apt update && sudo apt install postgresql -y
 
-cd /etc/apt/sources.list.d/ || exit 0
+cd /etc/apt/sources.list.d/ || echo 'ERROR IN CHANGING DIRECTORIES'
 
 sudo rm -f pgdg.list
 
 sudo touch pgdg.list
 
 echo "deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main" | sudo tee -a pgdg.list
-
-cd || exit 0
