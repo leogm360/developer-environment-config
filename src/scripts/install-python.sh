@@ -17,3 +17,11 @@ asdf global python 3.10.4
 asdf reshim
 
 asdf list python
+
+"$HOME"/.asdf/installs/python/3\.10\.4/bin/python3\.10 -m pip install --upgrade pip
+
+pip install pycodestyle
+
+pip install ipython
+
+asdf reshim
