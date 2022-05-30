@@ -14,4 +14,6 @@ asdf install python 3.10.4
 
 asdf global python 3.10.4
 
+asdf reshim
+
 asdf list python
