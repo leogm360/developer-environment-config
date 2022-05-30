@@ -17,3 +17,5 @@ cp ./firacode/variable_tff/FiraCode-VF.ttf "$HOME"/.local/share/fonts
 cp ./meslo/*.ttf "$HOME"/.local/share/fonts
 
 sudo rm -rf ./*
+
+cd ../scripts || echo 'ERROR IN CHANGING DIRECTORIES'

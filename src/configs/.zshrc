@@ -77,7 +77,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  asdf
+  git
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,8 +113,9 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 source /home/leonardo/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-source /home/leonardo/.zsh/completion.zsh
+
 # Load completion config
 source $HOME/.zsh/completion.zsh
 
@@ -128,12 +132,13 @@ fi
 
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
+
 source /home/leonardo/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 source /home/leonardo/.zsh/history.zsh
-alias ls='ls -G'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source /home/leonardo/.zsh/completion.zsh
-alias ls='ls -G'
+
+source /home/leonardo/.asdf/asdf.sh

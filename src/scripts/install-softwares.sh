@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /temp || echo 'ERROR IN CHANGING DIRECTORIES'
+cd ../temp || echo 'ERROR IN CHANGING DIRECTORIES'
 
 curl -C - -O -L https://downloads.slack-edge.com/releases/linux/4.25.0/prod/x64/slack-desktop-4.25.0-amd64.deb
 
@@ -23,3 +23,5 @@ sudo dpkg -i *.deb
 sudo apt -f install -y
 
 sudo rm -rf ./*
+
+cd ../scripts || echo 'ERROR IN CHANGING DIRECTORIES'
