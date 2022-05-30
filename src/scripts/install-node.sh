@@ -6,4 +6,4 @@ source "$HOME"/.nvm/nvm.sh
 
 nvm install --lts
 
-npm install --location=global yarn vercel netlify-cli
+npm install --location=global yarn@latest vercel@latest netlify-cli@latest
