@@ -15,7 +15,7 @@ start=$(date +%S)
 ./install-brave-browser.sh
 ./install-beekeeper-studio.sh
 ./install-heroku.sh
-./install-ookla-speedtest
+./install-ookla-speedtest.sh
 ./install-inkscape.sh
 ./install-sticky-notes.sh
 ./install-qbit-torrent.sh
