@@ -4,8 +4,6 @@ cd ./src/scripts || echo 'ERROR IN CHANGING DIRECTORIES'
 
 sudo chmod +x *.sh
 
-start=$(date +%S)
-
 ./install-first-start.sh
 ./install-git-gitflow.sh
 ./install-node.sh
@@ -27,10 +25,10 @@ cd ../configs || echo 'ERROR IN CHANGING DIRECTORIES'
 
 cp -r ./ "$HOME"
 
+cd ../scripts || echo 'ERROR IN CHANGING DIRECTORIES'
+
 ./install-python.sh
 
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
-end=$(date +%S)
-
-echo "✨ All done (took $((end - start))s)."
+echo -e "\n✨ All done."

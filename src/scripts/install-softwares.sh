@@ -23,5 +23,3 @@ sudo dpkg -i *.deb
 sudo apt -f install -y
 
 sudo rm -rf ./*
-
-cd ../scripts || echo 'ERROR IN CHANGING DIRECTORIES'

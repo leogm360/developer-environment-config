@@ -12,10 +12,14 @@ unzip -q Fira_Code_v6.2.zip -d ./firacode
 
 unzip -q Meslo.zip -d ./meslo
 
-cp ./firacode/variable_tff/FiraCode-VF.ttf "$HOME"/.local/share/fonts
+if [ ! -d ~/.local/share/fonts ]; then
+  sudo mkdir ~/.local/share/fonts
 
-cp ./meslo/*.ttf "$HOME"/.local/share/fonts
+  sudo chown "$USER":"$USER" ~/.local/share/fonts
+fi
+
+cp ./firacode/variable_ttf/FiraCode-VF.ttf ~/.local/share/fonts
+
+cp ./meslo/*.u ttf ~/.local/share/fonts
 
 sudo rm -rf ./*
-
-cd ../scripts || echo 'ERROR IN CHANGING DIRECTORIES'
