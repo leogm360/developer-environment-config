@@ -20,6 +20,6 @@ fi
 
 cp ./firacode/variable_ttf/FiraCode-VF.ttf ~/.local/share/fonts
 
-cp ./meslo/*.u ttf ~/.local/share/fonts
+cp ./meslo/*.ttf ~/.local/share/fonts
 
 sudo rm -rf ./*
