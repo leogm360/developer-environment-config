@@ -27,6 +27,8 @@ cp -r ./ "$HOME"
 
 cd ../scripts || echo 'ERROR IN CHANGING DIRECTORIES'
 
+zsh
+
 ./install-python.sh
 
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
