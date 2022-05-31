@@ -19,6 +19,7 @@ start=$(date +%S)
 ./install-inkscape.sh
 ./install-sticky-notes.sh
 ./install-qbit-torrent.sh
+./install-fonts.sh
 ./install-oh-my-zsh.sh
 ./install-power-level10k.sh
 
@@ -27,6 +28,8 @@ cd ../configs || echo 'ERROR IN CHANGING DIRECTORIES'
 cp -r ./ "$HOME"
 
 ./install-python.sh
+
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 end=$(date +%S)
 

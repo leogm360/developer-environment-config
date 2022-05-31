@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sudo apt update && sudo apt install ca-certificates curl gnupg lsb-release -y
+sudo apt install ca-certificates gnupg lsb-release -y
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
@@ -10,10 +10,6 @@ sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y
 
 sudo gpasswd -a "$USER" docker
 
-docker -v
-
 sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
 sudo chmod +x /usr/local/bin/docker-compose
-
-docker-compose --version
