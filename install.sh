@@ -23,13 +23,11 @@ sudo chmod +x *.sh
 
 cd ../configs || echo 'ERROR IN CHANGING DIRECTORIES'
 
-cp -r ./ "$HOME"
+cp -r ./ ~
 
 cd ../scripts || echo 'ERROR IN CHANGING DIRECTORIES'
 
-zsh
-
-./install-python.sh
+zsh install-python.sh
 
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 

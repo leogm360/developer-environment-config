@@ -18,6 +18,8 @@ curl -C - -L "https://updates.insomnia.rest/downloads/ubuntu/latest?&app=com.ins
 
 curl -C - -O -L https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
+curl -C - -L "https://desktop.docker.com/linux/main/amd64/docker-desktop-4.10.1-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >docker-desktop.deb
+
 sudo dpkg -i *.deb
 
 sudo apt -f install -y

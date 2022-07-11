@@ -80,6 +80,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   asdf
   git
+  git-auto-fetch
+  gitignore
+  heroku
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -114,10 +117,10 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /home/leonardo/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Load completion config
-source ~/.zsh/completion.zsh
+source $HOME/.zsh/completion.zsh
 
 # Initialize the completion system
 autoload -Uz compinit
@@ -133,12 +136,16 @@ fi
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/leonardo/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source ~/.zsh/history.zsh
+source /home/leonardo/.zsh/history.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source ~/.asdf/asdf.sh
+source /home/leonardo/.asdf/asdf.sh
+
+if [ -f ~/.zsh_aliases ]; then
+  source ~/.zsh_aliases
+fi

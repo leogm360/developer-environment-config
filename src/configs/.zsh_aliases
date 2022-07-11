@@ -1,0 +1,23 @@
+source ~/.libs/sh/pygo.lib.sh
+
+alias pytw="ptw -- --last-failed --new-first"
+
+alias boot-venv="python -m venv --upgrade-deps venv"
+
+alias dep-install-venv="pip install -r requirements.txt"
+
+alias dep-save-venv="pip freeze > requirements.txt"
+
+alias activate="source venv/bin/activate"
+
+alias mango="python manage.py"
+
+alias imango="ipython -i manage.py"
+
+alias base-deps="pip install ipython black pycodestyle"
+
+alias boot-pypro="boot-venv && activate && dep-install-venv && mango makemigrations && mango migrate && base-deps && dep-save-venv"
+
+alias feat-start="git flow feature start"
+
+alias feat-end="git flow feature finish"
