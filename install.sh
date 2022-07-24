@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+mkdir ./src/temp || echo 'ERROR IN CREATING DIRECTORY'
+
 cd ./src/scripts || echo 'ERROR IN CHANGING DIRECTORIES'
 
 sudo chmod +x *.sh
@@ -18,6 +20,7 @@ sudo chmod +x *.sh
 ./install-sticky-notes.sh
 ./install-qbit-torrent.sh
 ./install-fonts.sh
+./install-github-cli.sh
 ./install-oh-my-zsh.sh
 ./install-power-level10k.sh
 
