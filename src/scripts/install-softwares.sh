@@ -12,7 +12,7 @@ curl -C - -O -L https://az764295.vo.msecnd.net/stable/dfd34e8260c270da74b5c2d86d
 
 curl -C - -O -L https://repo.steampowered.com/steam/archive/precise/steam_latest.deb
 
-curl -C - -L https://releases.hyper.is/download/deb >hyper.deb
+curl -C - -L "https://releases.hyper.is/download/deb" >hyper.deb
 
 curl -C - -L "https://updates.insomnia.rest/downloads/ubuntu/latest?&app=com.insomnia.app&source=website" >insomnia.deb
 
@@ -20,8 +20,8 @@ curl -C - -O -L https://dl.google.com/linux/direct/google-chrome-stable_current_
 
 curl -C - -L "https://desktop.docker.com/linux/main/amd64/docker-desktop-4.10.1-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" >docker-desktop.deb
 
-sudo dpkg -i *.deb
+curl -C - -O -L https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
 
-sudo apt -f install -y
+sudo apt install -fy ./*.deb
 
 sudo rm -rf ./*

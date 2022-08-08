@@ -8,4 +8,4 @@ nvm install --lts
 
 npm i -g npm@latest
 
-npm i -g yarn@latest vercel@latest netlify-cli@latest
+npm i -g yarn@latest vercel@latest netlify-cli@latest @nestjs/cli
