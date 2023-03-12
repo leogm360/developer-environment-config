@@ -1,10 +1,10 @@
-<div style="text-align:center;padding:20px;">
+<p align="center" dir="auto">
     <img
         style="width:300px;height:auto;"
-        src="./static/config_logo.svg"
+        src="https://leogm360.github.io/leogm-images/development-config-logo.svg"
         alt="Logotipo do repositório"
     />
-</div>
+</p>
 
 Respositório dedicado a guardar bash scripts que instalam softwares e configuram um ambiente de desenvolvedor em acordo com as necessidades de [leogm360](https://github.com/leogm360). O código aqui encontrado é de livre uso, modificação e distribuição em acordo com a licença [MIT](https://opensource.org/license/mit/).
 
