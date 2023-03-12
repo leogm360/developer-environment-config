@@ -1,8 +1,12 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 POSTGRES_USER=$USER
 POSTGRES_USER_PASSWORD='123456789'
 POSTGRES_DATABASE=$USER
+
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART POSTGRESQL INSTALL...\n$NO_COLOR"
 
 # add postgresql repository to apt list
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -35,3 +39,5 @@ sudo -u postgres psql <<query
   CREATE DATABASE $POSTGRES_DATABASE;
   ALTER DATABASE $POSTGRES_DATABASE OWNER TO $POSTGRES_USER;
 query
+
+echo -e "$BOLD_LIGHT_BLUE\nEND POSTGRESQL INSTALL...\n$NO_COLOR"

@@ -2,6 +2,10 @@
 
 TMP='../tmp'
 
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART SOFTWARES INSTALL...\n$NO_COLOR"
+
 # slack
 curl -C - -L "https://downloads.slack-edge.com/releases/linux/4.29.149/prod/x64/slack-desktop-4.29.149-amd64.deb" --output "$TMP/slack.deb"
 
@@ -28,3 +32,5 @@ curl -C - -L "https://download.dbeaver.com/community/23.0.0/dbeaver-ce_23.0.0_am
 
 #install all softwares
 sudo apt install -y "$PWD/$TMP"/*.deb
+
+echo -e "$BOLD_LIGHT_BLUE\nEND SOFTWARES INSTALL...\n$NO_COLOR"

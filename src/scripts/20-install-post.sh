@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART POST INSTALL...\n$NO_COLOR"
+
 # fix any broken install
 sudo apt install -f
 
@@ -8,3 +12,5 @@ sudo apt update && sudo apt upgrade -y
 
 # remove any unneeded dependency
 sudo apt autoremove -y
+
+echo -e "$BOLD_LIGHT_BLUE\nEND POST INSTALL...\n$NO_COLOR"

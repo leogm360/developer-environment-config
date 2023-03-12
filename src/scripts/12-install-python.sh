@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART PYTHON INSTALL...\n$NO_COLOR"
+
 # pre install necessary python and asdf dependencies
 sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
 
@@ -29,3 +33,5 @@ pip install pycodestyle pylance ipython black
 
 # reaload shims
 asdf reshim
+
+echo -e "$BOLD_LIGHT_BLUE\nEND PYTHON INSTALL...\n$NO_COLOR"

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART DOCKER ENGINE INSTALL...\n$NO_COLOR"
+
 # remove older docker versions
 sudo apt remove docker docker-engine docker.io containerd runc
 
@@ -17,3 +21,5 @@ sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io -y
 
 # add session user to docker group so docker cli can be called without 'sudo'
 sudo gpasswd -a "$USER" docker
+
+echo -e "$BOLD_LIGHT_BLUE\nEND DOCKER ENGINE INSTALL...\n$NO_COLOR"

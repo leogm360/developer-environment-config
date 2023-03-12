@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART OH MY ZSH INSTALL...\n$NO_COLOR"
+
 # install zsh shell
 sudo apt install zsh -y
 
@@ -17,3 +21,5 @@ git clone https://github.com/z-shell/F-Sy-H.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/
 
 # install oh my zsh completion plugin
 git clone https://github.com/zsh-users/zsh-completions "${ZSH_CUSTOM:-${ZSH:-$HOME/.oh-my-zsh}/custom}/plugins/zsh-completions"
+
+echo -e "$BOLD_LIGHT_BLUE\nEND OH MY ZSH INSTALL...\n$NO_COLOR"
