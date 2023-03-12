@@ -9,20 +9,20 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev librea
 git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.11.2
 
 # send bash asdf initilizer to bashrc
-echo -e "\nsource $HOME/.asdf/asdf.sh" >>"$HOME/.bashrc"
+echo "source $HOME/.asdf/asdf.sh" >>"$HOME/.bashrc"
 
 # source bashrc
 # shellcheck source=/dev/null
-source "$HOME/.bashrc"
+. "$HOME/.bashrc"
 
 # add python to asdf control
-asdf plugin-add python
+asdf plugin-add python latest
 
 # install the latest version of python
-asdf install python
+asdf install python latest
 
 # sets python bin as global
-asdf global python
+asdf global python latest
 
 # reaload shims
 asdf reshim

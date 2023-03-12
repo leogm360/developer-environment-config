@@ -148,6 +148,10 @@ export NVM_DIR="$HOME/.nvm"
 # shellcheck source=/dev/null
 source "$HOME/.zsh_aliases"
 
-# Load Angular CLI autocompletion.
+# Load Angular CLI autocompletion
 # shellcheck source=/dev/null
 source <(ng completion script)
+
+# Load cargo environment configuration
+# shellcheck source=/dev/null
+source "$HOME"/.cargo/env

@@ -8,7 +8,7 @@ sudo touch /usr/share/keyrings/apt.postgresql.org.gpg
 # dumps postgres gpg key to trusted gpg keyring
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor | sudo tee /usr/share/keyrings/apt.postgresql.org.gpg >/dev/null
 
-# add postgresql repository to apt list
+# add postgresql repository to apt list index
 sudo sh -c 'echo "deb [signed-by=/usr/share/keyrings/apt.postgresql.org.gpg arch=amd64] http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 # update apt index and install postgresql

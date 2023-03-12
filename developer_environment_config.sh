@@ -55,7 +55,7 @@ try
     sudo chmod a+x "$ROOT$SCRIPTS"/*.sh || throw 3
 
     # counts how many auxiliary script files exists and save into the variable
-    INSTALL_SCRIPTS_COUNTER=$(find -L "$ROOT$SCRIPTS" | wc -l) || throw 4
+    INSTALL_SCRIPTS_COUNTER=$(find -L "$ROOT$SCRIPTS" ! -path "$ROOT$SCRIPTS" | wc -l) || throw 4
 
     # run all auxiliary scripts
     for counter in $(seq 1 1 "$INSTALL_SCRIPTS_COUNTER"); do
