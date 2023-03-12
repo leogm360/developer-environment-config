@@ -29,12 +29,12 @@
 #
 # <<<<<<<<<<<<<<<<<<<<<<<< header <<<<<<<<<<<<<<<<<<<<<<<<
 
-export ROOT="./src"
-export CONFIGS="/configs"
-export HELPERS="/helpers"
-export SCRIPTS="/scripts"
-export TMP="/tmp"
-export INSTALL_SCRIPTS_COUNTER=0
+ROOT="./src"
+CONFIGS="/configs"
+HELPERS="/helpers"
+SCRIPTS="/scripts"
+TMP="/tmp"
+INSTALL_SCRIPTS_COUNTER=0
 
 # load all the helpers
 for helper in "$ROOT$HELPERS"/*.sh; do

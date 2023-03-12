@@ -28,3 +28,5 @@ function throw_errors() {
 function ignore_errors() {
     set +e
 }
+
+export try catch throw throw_errors ignore_errors
