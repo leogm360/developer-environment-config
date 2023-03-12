@@ -5,8 +5,6 @@ SPEEDTEST_TGZ="$TMP/speedtest.tgz"
 SPEEDTEST="speedtest"
 BIN="/bin"
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART OOKLA SPEEDTEST INSTALL...\n$NO_COLOR"
 
 # download ookla speedtest binary

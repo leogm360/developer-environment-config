@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART POWERLEVEL10K INSTALL...\n$NO_COLOR"
 
 # install powerleve10k terminal theme for oh my zsh

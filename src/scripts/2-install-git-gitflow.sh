@@ -3,8 +3,6 @@
 GIT_USER="leogm360"
 GIT_EMAIL="leogm360@gmail.com"
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART GIT GIT-FLOW INSTALL...\n$NO_COLOR"
 
 # add git private repository to apt list

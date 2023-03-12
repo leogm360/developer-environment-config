@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART PRE INSTALL...\n$NO_COLOR"
 
 # first update apt index and upgrade all dependencies

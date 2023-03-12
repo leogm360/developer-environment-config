@@ -7,8 +7,6 @@ MESLO_DIR="$TMP/meslo"
 MESLO_ZIP="$TMP/meslo.zip"
 LOCAL_FONTS="$HOME/.local/share/fonts"
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART FONTS INSTALL...\n$NO_COLOR"
 
 # download fira code font

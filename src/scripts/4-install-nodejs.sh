@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART NODEJS INSTALL...\n$NO_COLOR"
 
 # install node version manager script in local machine

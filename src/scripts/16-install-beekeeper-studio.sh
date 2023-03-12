@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART BEEKEEPER INSTALL...\n$NO_COLOR"
 
 # add beekeeper repo to apt lists directory

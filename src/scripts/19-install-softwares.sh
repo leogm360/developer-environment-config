@@ -2,8 +2,6 @@
 
 TMP='../tmp'
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART SOFTWARES INSTALL...\n$NO_COLOR"
 
 # slack

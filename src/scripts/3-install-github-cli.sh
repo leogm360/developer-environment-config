@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART GITHUB CLI INSTALL...\n$NO_COLOR"
 
 # download gpg key of github cli

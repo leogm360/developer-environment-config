@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART INKSCAPE INSTALL...\n$NO_COLOR"
 
 # add inkscape repository to apt list

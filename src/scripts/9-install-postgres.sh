@@ -4,8 +4,6 @@ POSTGRES_USER=$USER
 POSTGRES_USER_PASSWORD='123456789'
 POSTGRES_DATABASE=$USER
 
-source ../helpers/colors.sh
-
 echo -e "$BOLD_LIGHT_BLUE\nSTART POSTGRESQL INSTALL...\n$NO_COLOR"
 
 # add postgresql repository to apt list
