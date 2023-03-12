@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART GITHUB CLI INSTALL...\n$NO_COLOR"
+
 # download gpg key of github cli
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 
@@ -14,3 +18,5 @@ sudo apt update
 
 # install github cli
 sudo apt install gh
+
+echo -e "$BOLD_LIGHT_BLUE\nEND GITHUB CLI INSTALL...\n$NO_COLOR"

@@ -7,6 +7,10 @@ MESLO_DIR="$TMP/meslo"
 MESLO_ZIP="$TMP/meslo.zip"
 LOCAL_FONTS="$HOME/.local/share/fonts"
 
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART FONTS INSTALL...\n$NO_COLOR"
+
 # download fira code font
 curl -C - -L https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip --output "$FIRACODE_ZIP"
 
@@ -29,7 +33,9 @@ unzip -q "$MESLO_ZIP" -d "$MESLO_DIR"
 [ ! -d "$LOCAL_FONTS" ] && mkdir "$LOCAL_FONTS"
 
 # copy unpacked fira code to custom fonts dir
-cp -a "$FIRACODE_DIR/ttf/." "$LOCAL_FONTS"
+cp -a "$FIRACODE_DIR"/ttf/*.ttf "$LOCAL_FONTS"
 
 # copy unpacked meslo to custom fonts dir
-cp -a "$MESLO_DIR/." "$LOCAL_FONTS"
+cp -a "$MESLO_DIR"/*.ttf "$LOCAL_FONTS"
+
+echo -e "$BOLD_LIGHT_BLUE\nEND FONTS INSTALL...\n$NO_COLOR"

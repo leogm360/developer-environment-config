@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART BRAVE BROWSER INSTALL...\n$NO_COLOR"
+
 # install brave browser dependencies
 sudo apt install apt-transport-https -y
 
@@ -11,3 +15,5 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 
 # update apt and install brave-browser
 sudo apt update && sudo apt install brave-browser -y
+
+echo -e "$BOLD_LIGHT_BLUE\nEND BRAVE BROWSER INSTALL...\n$NO_COLOR"

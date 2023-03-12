@@ -3,6 +3,10 @@
 GIT_USER="leogm360"
 GIT_EMAIL="leogm360@gmail.com"
 
+source ../helpers/colors.sh
+
+echo -e "$BOLD_LIGHT_BLUE\nSTART GIT GIT-FLOW INSTALL...\n$NO_COLOR"
+
 # add git private repository to apt list
 sudo add-apt-repository -y ppa:git-core/ppa
 
@@ -29,3 +33,5 @@ eval "$(ssh-agent -s)" || exit 1
 
 # add generated keys to ssh agent
 ssh-add "$HOME/.ssh/id_ed25519"
+
+echo -e "$BOLD_LIGHT_BLUE\nEND GIT GIT-FLOW INSTALL...\n$NO_COLOR"
