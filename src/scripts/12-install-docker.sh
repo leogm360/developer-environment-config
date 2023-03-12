@@ -3,7 +3,7 @@
 echo -e "$BOLD_LIGHT_BLUE\nSTART DOCKER ENGINE INSTALL...\n$NO_COLOR"
 
 # remove older docker versions
-sudo apt remove docker docker-engine docker.io containerd runc
+sudo apt remove docker docker-engine docker.io containerd runc -y
 
 # installs packages that docker depends on
 sudo apt install ca-certificates gnupg lsb-release -y

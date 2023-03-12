@@ -85,6 +85,7 @@ plugins=(
 # Load zsh-completion
 fpath+="${ZSH_CUSTOM:-${ZSH:-$HOME/.oh-my-zsh}/custom}/plugins/zsh-completions/src"
 
+# shellcheck source=/dev/null
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -116,7 +117,15 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-source /home/leonardo/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# Load asdf
+# shellcheck source=/dev/null
+source "$HOME"/.asdf/asdf.sh
+
+# append completions to fpath
+fpath=("$ASDF_DIR"/completions $fpath)
+
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
 # Cache completion if nothing changed - faster startup time
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
@@ -129,18 +138,16 @@ fi
 # Enhanced form of menu completion called `menu selection'
 zmodload -i zsh/complist
 
-source /home/leonardo/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source /home/leonardo/.zsh/history.zsh
-
+# Load nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source /home/leonardo/.asdf/asdf.sh
-
-# Load any found alias
-[ -f ~/.zsh_aliases ] && source ~/.zsh_aliases
+# Load any found aliases
+[ -f $HOME/.zsh_aliases ] && \ 
+# shellcheck source=/dev/null
+source "$HOME/.zsh_aliases"
 
 # Load Angular CLI autocompletion.
+# shellcheck source=/dev/null
 source <(ng completion script)

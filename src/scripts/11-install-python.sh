@@ -8,8 +8,12 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev librea
 # clones asdf repository localy
 git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.11.2
 
+# send bash asdf initilizer to bashrc
+echo -e "\nsource $HOME/.asdf/asdf.sh" >>"$HOME/.bashrc"
+
+# source bashrc
 # shellcheck source=/dev/null
-source "$HOME/.zshrc"
+source "$HOME/.bashrc"
 
 # add python to asdf control
 asdf plugin-add python
