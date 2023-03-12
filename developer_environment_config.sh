@@ -46,7 +46,7 @@ done
 try
 (
     # copy configs content to user home
-    cp "$ROOT$CONFIGS"/* "$HOME"/ || throw 1
+    cp -r "$ROOT$CONFIGS"/. "$HOME" || throw 1
 
     # check if tmp dir exits and create it if not
     [ ! -d "$ROOT$TMP" ] && (mkdir "$ROOT$TMP" || throw 2)
