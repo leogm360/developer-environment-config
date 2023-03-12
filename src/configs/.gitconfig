@@ -1,7 +1,0 @@
-[init]
-	defaultBranch = main
-[user]
-	email = leogm360@gmail.com
-	name = leogm360	
-[core]
-	editor = code -w

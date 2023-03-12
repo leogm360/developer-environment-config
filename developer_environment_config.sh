@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+# >>>>>>>>>>>>>>>>>>>>>>>> header >>>>>>>>>>>>>>>>>>>>>>>>
+# Nome      : developer_environment_config.sh
+# Site      : https://github.com/leogm360/developer-environment-config
+# Autor     : Leonardo Moraes <leogm360@gmail.com>
+# Manutenção: Leonardo Moraes <leogm360@gmail.com>
+#
+# -------------------------------------------------------------
+# Instala e configura um ambiente de desenvolvimento no sistema
+# operacional Ubuntu 22.04 LTS, cnoforme a necessidade de leogm360.
+#
+# Exemplos:
+#
+# $ ./developer_environment_config.sh
+#
+# -------------------------------------------------------------
+# Histórico:
+#
+# v1.0.0 2023-03-11, Leonardo Moraes:
+# - Cria primeira versão do script.
+#
+# --------------------------------------------------------------
+# Licença:
+#
+# - MIT
+#
+# <<<<<<<<<<<<<<<<<<<<<<<< header <<<<<<<<<<<<<<<<<<<<<<<<
+
+export ROOT="./src"
+export CONFIGS="/configs"
+export HELPERS="/helpers"
+export SCRIPTS="/scripts"
+export TMP="/tmp"
+export INSTALL_SCRIPTS_COUNTER=0
+
+# load all the helpers
+for helper in "$ROOT$HELPERS"/*.sh; do
+    # shellcheck source=/dev/null
+    source "$helper"
+done
+
+# try executing commands in this block
+try
+(
+    # check if tmp dir exits and create it if not
+    [ ! -d "$ROOT$TMP" ] && (mkdir "$ROOT$TMP" || throw 1)
+
+    # grants execution permission to auxiliary scripts
+    sudo chmod a+x "$ROOT$SCRIPTS"/*.sh || throw 2
+
+    # counts how many auxiliary script files exists and save into the variable
+    INSTALL_SCRIPTS_COUNTER=$(find -L "$ROOT$SCRIPTS" | wc -l) || throw 3
+
+    # run all auxiliary scripts
+    for counter in $(seq 1 1 "$INSTALL_SCRIPTS_COUNTER"); do
+        # shellcheck source=/dev/null
+        . "$ROOT$SCRIPTS"/"$counter"-*.sh
+    done || throw 4
+
+    # delete tmp dir
+    rm -r "$ROOT$TMP" || throw 5
+
+    # outputs success message
+    echo -e "$SUCCESS"
+)
+# catch thrown errors in this block
+catch ||
+    {
+        case "$EXIT_CODE" in
+        1)
+            echo -e "$CREATE_TMP_ERROR"
+            ;;
+        2)
+            echo -e "$PERMISSIONS_ERROR"
+            ;;
+        3)
+            echo -e "$COUNTING_ERROR"
+            ;;
+        4)
+            echo -e "$EXECUTION_ERROR"
+            ;;
+        5)
+            echo -e "$DELETE_TMP_ERROR"
+            ;;
+        *)
+            echo -e "$UNKOWN_ERROR"
+            ;;
+        esac
+
+        throw_errors && throw 1
+    }
