@@ -19,6 +19,9 @@
 # v1.0.0 2023-03-11, Leonardo Moraes:
 # - Cria primeira versão do script.
 #
+# v1.0.1 2023-03-12, Leonardo Moraes:
+# - Copia configurações para a home do usuário.
+#
 # --------------------------------------------------------------
 # Licença:
 #
@@ -42,23 +45,26 @@ done
 # try executing commands in this block
 try
 (
+    # copy configs content to user home
+    cp "$ROOT$CONFIGS"/* "$HOME"/ || throw 1
+
     # check if tmp dir exits and create it if not
-    [ ! -d "$ROOT$TMP" ] && (mkdir "$ROOT$TMP" || throw 1)
+    [ ! -d "$ROOT$TMP" ] && (mkdir "$ROOT$TMP" || throw 2)
 
     # grants execution permission to auxiliary scripts
-    sudo chmod a+x "$ROOT$SCRIPTS"/*.sh || throw 2
+    sudo chmod a+x "$ROOT$SCRIPTS"/*.sh || throw 3
 
     # counts how many auxiliary script files exists and save into the variable
-    INSTALL_SCRIPTS_COUNTER=$(find -L "$ROOT$SCRIPTS" | wc -l) || throw 3
+    INSTALL_SCRIPTS_COUNTER=$(find -L "$ROOT$SCRIPTS" | wc -l) || throw 4
 
     # run all auxiliary scripts
     for counter in $(seq 1 1 "$INSTALL_SCRIPTS_COUNTER"); do
         # shellcheck source=/dev/null
         . "$ROOT$SCRIPTS"/"$counter"-*.sh
-    done || throw 4
+    done || throw 5
 
     # delete tmp dir
-    rm -r "$ROOT$TMP" || throw 5
+    rm -r "$ROOT$TMP" || throw 6
 
     # outputs success message
     echo -e "$SUCCESS"
@@ -68,18 +74,21 @@ catch ||
     {
         case "$EXIT_CODE" in
         1)
-            echo -e "$CREATE_TMP_ERROR"
+            echo -e "$COPY_ERROR"
             ;;
         2)
-            echo -e "$PERMISSIONS_ERROR"
+            echo -e "$CREATE_TMP_ERROR"
             ;;
         3)
-            echo -e "$COUNTING_ERROR"
+            echo -e "$PERMISSIONS_ERROR"
             ;;
         4)
-            echo -e "$EXECUTION_ERROR"
+            echo -e "$COUNTING_ERROR"
             ;;
         5)
+            echo -e "$EXECUTION_ERROR"
+            ;;
+        6)
             echo -e "$DELETE_TMP_ERROR"
             ;;
         *)
