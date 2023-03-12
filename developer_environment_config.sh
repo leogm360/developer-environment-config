@@ -59,9 +59,9 @@ try
 
     # run all auxiliary scripts
     for counter in $(seq 1 1 "$INSTALL_SCRIPTS_COUNTER"); do
-        # shellcheck source=/dev/null
-        . "$ROOT$SCRIPTS"/"$counter"-*.sh
-    done || throw 5
+        # shellcheck disable=SC1090
+        . "$ROOT$SCRIPTS"/"$counter"-*.sh || throw 5
+    done
 
     # delete tmp dir
     rm -r "$ROOT$TMP" || throw 6
