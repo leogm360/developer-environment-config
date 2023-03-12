@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-TMP="../tmp"
-SPEEDTEST_TGZ="$TMP/speedtest.tgz"
+SPEEDTEST_TGZ="$ROOT$TMP/speedtest.tgz"
 SPEEDTEST="speedtest"
 BIN="/bin"
 
