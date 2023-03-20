@@ -16,7 +16,7 @@ echo "source $HOME/.asdf/asdf.sh" >>"$HOME/.bashrc"
 source "$HOME/.bashrc"
 
 # add python to asdf control
-asdf plugin-add python latest
+asdf plugin-add python
 
 # install the latest version of python
 asdf install python latest
