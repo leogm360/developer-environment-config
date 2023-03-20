@@ -1,7 +1,7 @@
 <p align="center" dir="auto">
     <img
         style="width:300px;height:auto;"
-        src="https://leogm360.github.io/leogm-images/development-config-logo.svg"
+        src="https://leogm360.github.io/leogm360-images/development-config-logo.svg"
         alt="Logotipo do repositório"
     />
 </p>
