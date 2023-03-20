@@ -13,7 +13,7 @@ echo "source $HOME/.asdf/asdf.sh" >>"$HOME/.bashrc"
 
 # source bashrc
 # shellcheck source=/dev/null
-. "$HOME/.bashrc"
+source "$HOME/.bashrc"
 
 # add python to asdf control
 asdf plugin-add python latest
