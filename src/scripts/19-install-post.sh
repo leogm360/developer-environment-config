@@ -3,7 +3,7 @@
 echo -e "$BOLD_LIGHT_BLUE\nSTART POST INSTALL...\n$NO_COLOR"
 
 # fix any broken install
-sudo apt install -f
+sudo apt install -fy
 
 # last update index and upgrade any dependency left behind
 sudo apt update && sudo apt upgrade -y
