@@ -9,11 +9,13 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev librea
 git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.11.2
 
 # send bash asdf initilizer to bashrc
-echo "source $HOME/.asdf/asdf.sh" >>"$HOME/.bashrc"
+# change as per used shell
+echo "source $HOME/.asdf/asdf.sh" >>"$HOME/.zshrc"
 
-# source bashrc
+# source zshrc
+# change as per used shell
 # shellcheck source=/dev/null
-source "$HOME/.bashrc"
+source "$HOME/.zshrc"
 
 # add python to asdf control
 asdf plugin-add python
@@ -27,13 +29,13 @@ asdf global python latest
 # reaload shims
 asdf reshim
 
+# check python binary version
+python --version
+
 # install pip last version
 pip install --upgrade pip
 
 # install python prefered packages
 pip install pycodestyle pylance ipython black
-
-# reaload shims
-asdf reshim
 
 echo -e "$BOLD_LIGHT_BLUE\nEND PYTHON INSTALL...\n$NO_COLOR"

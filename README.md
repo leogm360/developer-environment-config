@@ -41,7 +41,7 @@ O projeto é de fácil uso, basta seguir o passo a passo:
 3 - Execute o script de instalação e aguarde sua conclusão:
 
 ```shell
-    ./developer_environment_config.sh
+    ./install.sh.sh
 ```
 
 O tempo necessário para a completa execução do script, vai variar dependendo das capacidades do computador onde foi utilizado. No entanto, ele costuma demorar pelo menos 5 mins.

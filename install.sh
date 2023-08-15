@@ -92,7 +92,7 @@ catch ||
             echo -e "$DELETE_TMP_ERROR"
             ;;
         *)
-            echo -e "$UNKOWN_ERROR"
+            echo -e "$UNKNOWN_ERROR"
             ;;
         esac
 

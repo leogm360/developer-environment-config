@@ -23,6 +23,9 @@ git config --global user.name "$GIT_USER"
 # config git global user email
 git config --global user.email "$GIT_EMAIL"
 
+# config git global autosetup and track remote branch
+git config --global --add --bool push.autoSetupRemote true
+
 # generate ssh keys with user email
 ssh-keygen -t ed25519 -C "$GIT_EMAIL"
 
@@ -31,5 +34,8 @@ eval "$(ssh-agent -s)" || exit 1
 
 # add generated keys to ssh agent
 ssh-add "$HOME/.ssh/id_ed25519"
+
+# outputs public ssh key
+cat "$HOME/.ssh/id_ed25519.pub"
 
 echo -e "$BOLD_LIGHT_BLUE\nEND GIT GIT-FLOW INSTALL...\n$NO_COLOR"
