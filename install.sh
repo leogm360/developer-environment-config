@@ -69,6 +69,7 @@ try
     # outputs success message
     echo -e "$SUCCESS"
 )
+
 # catch thrown errors in this block
 catch ||
     {
