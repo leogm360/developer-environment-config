@@ -17,4 +17,7 @@ sudo apt update
 # install github cli
 sudo apt install gh
 
+# AUthenticate github cli
+gh auth login -w
+
 echo -e "$BOLD_LIGHT_BLUE\nEND GITHUB CLI INSTALL...\n$NO_COLOR"
