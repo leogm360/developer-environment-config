@@ -5,7 +5,7 @@ echo -e "$BOLD_LIGHT_BLUE\nSTART NODEJS INSTALL...\n$NO_COLOR"
 # install node version manager script in local machine
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
-# source nvm script into actual bash session
+# source nvm script into current bash session
 # shellcheck source=/dev/null
 source "$HOME/.nvm/nvm.sh"
 
@@ -16,6 +16,13 @@ nvm install --lts
 npm i -g npm@latest
 
 # install all
-npm i -g yarn@latest next@latest vercel@latest netlify-cli@latest @nestjs/cli@latest @angular/cli@latest vite@latest typescript@latest
+npm i -g yarn@latest \
+    next@latest \
+    vercel@latest \
+    netlify-cli@latest \
+    @nestjs/cli@latest \
+    @angular/cli@latest \
+    vite@latest \
+    typescript@latest
 
 echo -e "$BOLD_LIGHT_BLUE\nEND NODEJS INSTALL...\n$NO_COLOR"
